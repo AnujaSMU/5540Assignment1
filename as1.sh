@@ -6,13 +6,13 @@ pass="$3"
 #
 echo
 #### INSERT HERE the command to import from authors.json into MONGO collection author
-mongoimport -d "$db" -p "$pass" -u "$user" -c authors --file /home/course/u00/sk_public/authors.json --jsonArray
+mongoimport -d "$db" -p "$pass" -u "$user" -c author --file /home/course/u00/sk_public/authors.json --jsonArray
 echo
 echo "-> Imported authors.json into Mongodb collection \"author\""
 echo
 #### INSERT HERE the commands to export the MONGO collection and delete it
-mongoexport -d "$db" -p "$pass" -u "$user" -c authors --type=csv --fields=fname,lname,email --out authors.csv
-mongo -u "$user" -p "$pass" "$db" --eval "db.authors.drop()"
+mongoexport -d "$db" -p "$pass" -u "$user" -c author --type=csv --fields=fname,lname,email --out authors.csv
+mongo -u "$user" -p "$pass" "$db" --eval "db.author.drop()"
 echo
 echo "-> Exported collection \"author\" into authors.csv and deleted the collection"
 #
