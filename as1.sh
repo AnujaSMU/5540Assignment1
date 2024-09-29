@@ -6,7 +6,7 @@ pass="$3"
 #
 echo
 #### INSERT HERE the command to import from authors.json into MONGO collection author
-mongoimport -d "$db" -p "$pass" -u "$user" -c author --file /home/course/u00/sk_public/authors.json --jsonArray
+mongoimport -d "$db" -p "$pass" -u "$user" -c author --file /home/course/u00/sk_public/authors.json
 echo
 echo "-> Imported authors.json into Mongodb collection \"author\""
 echo
