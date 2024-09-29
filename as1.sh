@@ -22,7 +22,7 @@ echo "-> Created table \"author\" in MySQL database"
 #
 echo
 #### INSERT HERE the commands to (possibly compile and) execute your program
-python convert_csv_to_sql.py authors.csv insert_authors.sql
+python3 convert_csv_to_sql.py authors.csv insert_authors.sql
 #
 mysql -u "$user" --password="$pass" "$db" -e "source insert_authors.sql;"
 rm authors.csv
