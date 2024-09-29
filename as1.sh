@@ -12,7 +12,7 @@ echo "-> Imported authors.json into Mongodb collection \"author\""
 echo
 #### INSERT HERE the commands to export the MONGO collection and delete it
 mongoexport -d "$db" -p "$pass" -u "$user" -c author --type=csv --fields=fname,lname,email --out authors.csv
-mongo -u "$user" -p "$pass" "$db" --eval "db.author.drop()"
+echo "db.author.drop()" | mongo "$db" -u "$user" --password="$pass"
 echo
 echo "-> Exported collection \"author\" into authors.csv and deleted the collection"
 #
